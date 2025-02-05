@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const rollDiceApi = async (sides = 6, dice = 1) => {
   try {
-    const response = await axios.get('http://localhost:4000/rolldice', {
+    const response = await axios.get( import.meta.env.VITE_API_URL, {
       params: { sides, dice },
     });
     return response.data.results;
